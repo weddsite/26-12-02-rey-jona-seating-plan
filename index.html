@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seat Lookup</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    iframe {
+      width: 100%;
+      height: 100vh;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <iframe id="app-frame" src=""></iframe>
+
+  <script>
+    // Replace with your actual Apps Script web app URL
+    const webAppUrl = "https://script.google.com/macros/s/AKfycbwaHjKJIfWDXE-IN19xB7l_8h7kr8CPTmfYlY8C2nKs4F7Djh8qmQcBfa5mbN3lrVb8Rw/exec?fbclid=IwY2xjawUDLjNwZG9mBWV4dG4DYWVtAjEwAGJyaWQRMXd2YWNqMEhYeUZZMDVaY2xzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEeIyokmkt6RQLoTeF5E-JIZcdikj7XcFNaefexrWM-cBhwPc_xkeFE6K_FEI4_aem_VXBL9IuatLvsW1nbsDr0Tg"; 
+    
+    // Automatically forwards any URL parameters (e.g. seat.domain.com?id=12) to the Apps Script
+    const currentParams = window.location.search;
+    document.getElementById("app-frame").src = webAppUrl + currentParams;
+  </script>
+</body>
+</html>
